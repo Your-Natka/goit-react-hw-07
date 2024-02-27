@@ -5,9 +5,9 @@ import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
 
-const validation = Yup.object().shape({
+const validationFormSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, 'Not enough symbols!')
+    .min(3, 'Too short!')
     .max(50, 'Too long!')
     .required('Required field!'),
   phone: Yup.string()
@@ -16,7 +16,7 @@ const validation = Yup.object().shape({
     .required('Required field!'),
 });
 
-const ContactForm = () => {
+export default function ContactForm() {
   const dispatch = useDispatch();
 
   const nameField = useId();
@@ -34,7 +34,7 @@ const ContactForm = () => {
         phone: '',
       }}
       onSubmit={handleSubmit}
-      validationSchema={validation}
+      validationSchema={validationFormSchema}
     >
       <Form className={css.form}>
         <div className={css.item}>
@@ -62,6 +62,4 @@ const ContactForm = () => {
       </Form>
     </Formik>
   );
-};
-
-export default ContactForm;
+}

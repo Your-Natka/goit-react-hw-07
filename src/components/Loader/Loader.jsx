@@ -1,12 +1,12 @@
 import { Oval } from 'react-loader-spinner';
 import css from './Loader.module.css';
 
-const Loader = () => {
+export default function Loader() {
   return (
     <div className={css.container}>
       <Oval
         visible={true}
-        height="100"
+        height="200"
         width="100"
         color="#111"
         secondaryColor="#111"
@@ -16,6 +16,4 @@ const Loader = () => {
       />
     </div>
   );
-};
-
-export default Loader;
+}

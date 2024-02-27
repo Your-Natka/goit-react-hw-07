@@ -1,6 +1,32 @@
 .list {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  max-width: 850px;
+  align-content: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 300px;
+}
+.contact {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: var(--primary-light-grey-color);
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .list {
+    justify-content: space-around;
+    align-content: center;
+  }
 }
